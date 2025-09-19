@@ -3,17 +3,31 @@ models:
     model: ai/llama3.2
 
 services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://docker:pass@db:5432/chatstore
+      - MCP_GATEWAY_URL=http://mcp-gateway:8811/sse
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    models:
+      - llama3.2
+    depends_on:
+      - mcp-gateway
+      - db
+      - initialize-db-schema
+
   mcp-gateway:
     image: docker/agents_gateway:v2
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
+    use_api_socket: true
     command:
-      - --verbose
       - --transport=sse
-      - --secrets=docker-desktop:/run/secrets/mcp_secret
       - --servers=brave,wikipedia-mcp
       - --tools=brave_web_search,get_article,get_summary,get_related_topics
-      - --port=9011
     secrets:
       - mcp_secret
 
@@ -43,24 +57,6 @@ services:
     depends_on:
       db:
         condition: service_healthy
-
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
-    environment:
-      - DATABASE_URL=postgresql://docker:pass@db:5432/chatstore
-      - MCP_GATEWAY_URL=http://mcp-gateway:9011/sse
-    extra_hosts:
-      - host.docker.internal:host-gateway
-    models:
-      - llama3.2
-    depends_on:
-      - mcp-gateway
-      - db
-      - initialize-db-schema
 
 volumes:
   chat_store:

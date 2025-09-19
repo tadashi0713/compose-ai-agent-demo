@@ -52,7 +52,7 @@ const MCPContext = createContext<MCPContextType | undefined>(undefined);
 const createDefaultMCPServer = (): MCPServer => ({
   id: crypto.randomUUID(),
   name: "Docker MCP Gateway",
-  url: "http://mcp-gateway:9011/sse",
+  url: "http://mcp-gateway:8811/sse",
   type: "sse",
   description: "Connect to the Docker MCP Catalog",
   status: "connected"

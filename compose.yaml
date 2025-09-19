@@ -12,8 +12,6 @@ services:
     environment:
       - DATABASE_URL=postgresql://docker:pass@db:5432/chatstore
       - MCP_GATEWAY_URL=http://mcp-gateway:8811/sse
-    extra_hosts:
-      - host.docker.internal:host-gateway
     models:
       - llama3.2
     depends_on:

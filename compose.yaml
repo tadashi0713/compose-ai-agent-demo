@@ -1,21 +1,8 @@
+models:
+  llama3.2:
+    model: ai/llama3.2
 
 services:
-
-  #########
-  # LLMS
-  #########
-  llama3.2:
-    provider:
-      type: model
-      options:
-        model: ai/llama3.2
-
-  #########
-  # MCPS
-  ########
-  # the mcp-gateway surfaces a restricted view of the tools
-  # exposed by the MCP Toolkit
-  # access gateway using SSE over http://mcp-gateway:9011/sse/...
   mcp-gateway:
     image: docker/agents_gateway:v2
     volumes:
@@ -30,8 +17,6 @@ services:
     secrets:
       - mcp_secret
 
-  # chat-store DB gives our app simple persistence for 
-  # storing history of messages and threads
   db:
     image: postgres:17.6-alpine
     environment:
@@ -59,9 +44,6 @@ services:
       db:
         condition: service_healthy
 
-  ##########
-  # AGENT UI
-  ##########
   app:
     build:
       context: .
@@ -73,8 +55,9 @@ services:
       - MCP_GATEWAY_URL=http://mcp-gateway:9011/sse
     extra_hosts:
       - host.docker.internal:host-gateway
-    depends_on:
+    models:
       - llama3.2
+    depends_on:
       - mcp-gateway
       - db
       - initialize-db-schema

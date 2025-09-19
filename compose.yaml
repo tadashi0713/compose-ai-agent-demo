@@ -10,12 +10,6 @@ services:
       options:
         model: ai/llama3.2
 
-  # qwen3:
-  #   provider:
-  #     type: model
-  #     options:
-  #       model: jimclark106/qwen3:4b-F16
-
   #########
   # MCPS
   ########
@@ -38,57 +32,55 @@ services:
 
   # chat-store DB gives our app simple persistence for 
   # storing history of messages and threads
-  chat-store:
-    image: postgres:15-alpine
+  db:
+    image: postgres:17.6-alpine
     environment:
-      - POSTGRES_USER=slim
+      - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=pass
       - POSTGRES_DB=chatstore
-    volumes:
-      - chat_store:/var/lib/postgresql/data
+    # volumes:
+    #   - chat_store:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U slim -d chatstore"]
+      test: ["CMD-SHELL", "pg_isready -U docker -d chatstore"]
       interval: 5s
       timeout: 5s
       retries: 5
       start_period: 10s
 
-  initialize-chat-store-schema:
+  initialize-db-schema:
     build:
       context: .
-      dockerfile: Dockerfile.initialize-chat-store-schema
+      dockerfile: Dockerfile.initialize-db-schema
     environment:
-      - DATABASE_URL=postgresql://slim:pass@chat-store:5432/chatstore
+      - DATABASE_URL=postgresql://docker:pass@db:5432/chatstore
     depends_on:
-      chat-store:
+      db:
         condition: service_healthy
 
   ##########
   # AGENT UI
   ##########
-  mcp-ui:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL=postgresql://slim:pass@chat-store:5432/chatstore
+      - DATABASE_URL=postgresql://docker:pass@db:5432/chatstore
       - MCP_GATEWAY_URL=http://mcp-gateway:9011/sse
     extra_hosts:
       - host.docker.internal:host-gateway
     depends_on:
       - llama3.2
       - mcp-gateway
-      - chat-store
-      - initialize-chat-store-schema
+      - db
+      - initialize-db-schema
 
-volumes:
-  chat_store:
-  docker-prompts:
-    name: docker-prompts
+# volumes:
+#   chat_store:
 
 secrets:
   mcp_secret:

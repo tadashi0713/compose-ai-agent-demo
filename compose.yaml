@@ -22,7 +22,7 @@ services:
       - initialize-db-schema
 
   mcp-gateway:
-    image: docker/agents_gateway:v2
+    image: docker/mcp-gateway:latest
     use_api_socket: true
     command:
       - --transport=sse

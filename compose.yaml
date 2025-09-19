@@ -38,8 +38,8 @@ services:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=pass
       - POSTGRES_DB=chatstore
-    # volumes:
-    #   - chat_store:/var/lib/postgresql/data
+    volumes:
+      - chat_store:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     healthcheck:
@@ -79,8 +79,8 @@ services:
       - db
       - initialize-db-schema
 
-# volumes:
-#   chat_store:
+volumes:
+  chat_store:
 
 secrets:
   mcp_secret:

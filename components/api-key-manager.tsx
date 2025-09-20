@@ -23,27 +23,6 @@ const API_KEYS_CONFIG: ApiKeyConfig[] = [
     label: "OpenAI API Key",
     placeholder: "sk-..."
   },
-  {
-    name: "Anthropic",
-    key: "anthropic",
-    storageKey: "ANTHROPIC_API_KEY",
-    label: "Anthropic API Key",
-    placeholder: "sk-ant-..."
-  },
-  {
-    name: "Groq",
-    key: "groq",
-    storageKey: "GROQ_API_KEY",
-    label: "Groq API Key",
-    placeholder: "gsk_..."
-  },
-  {
-    name: "XAI",
-    key: "xai",
-    storageKey: "XAI_API_KEY",
-    label: "XAI API Key",
-    placeholder: "xai-..."
-  }
 ];
 
 interface ApiKeyManagerProps {

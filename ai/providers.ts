@@ -1,7 +1,4 @@
 import { createOpenAI } from "@ai-sdk/openai";
-import { createGroq } from "@ai-sdk/groq";
-import { createAnthropic } from "@ai-sdk/anthropic";
-import { createXai } from "@ai-sdk/xai";
 import { createDMR } from "./dmr";
 
 
@@ -43,20 +40,7 @@ const openaiClient = createOpenAI({
   apiKey: getApiKey('OPENAI_API_KEY'),
 });
 
-const anthropicClient = createAnthropic({
-  apiKey: getApiKey('ANTHROPIC_API_KEY'),
-});
-
-const groqClient = createGroq({
-  apiKey: getApiKey('GROQ_API_KEY'),
-});
-
-const xaiClient = createXai({
-  apiKey: getApiKey('XAI_API_KEY'),
-});
-
 const llama32Url = process.env['LLAMA3.2_URL'] || 'http://model-runner.docker.internal/engines/llama.cpp/v1';
-console.log('LLAMA3.2_URL environment variable:', process.env['LLAMA3.2_URL']);
 
 const dmrClient = createDMR({
   baseURL: llama32Url
@@ -64,14 +48,6 @@ const dmrClient = createDMR({
 
 const languageModels = {
   "gpt-4.1-mini": openaiClient("gpt-4.1-mini"),
-  "claude-3-7-sonnet": anthropicClient('claude-3-7-sonnet-20250219'),
-  "qwen-qwq": wrapLanguageModel(
-    {
-      model: groqClient("qwen-qwq-32b"),
-      middleware
-    }
-  ),
-  "grok-3-mini": xaiClient("grok-3-mini-latest"),
   "llama3.2": wrapLanguageModel(
     {
       model: dmrClient("ai/llama3.2", { stream: false }),
@@ -93,27 +69,6 @@ export const modelDetails: Record<keyof typeof languageModels, ModelInfo> = {
     description: "Compact version of OpenAI's GPT-4.1 with good balance of capabilities, including vision.",
     apiVersion: "gpt-4.1-mini",
     capabilities: ["Balance", "Creative", "Vision"]
-  },
-  "claude-3-7-sonnet": {
-    provider: "Anthropic",
-    name: "Claude 3.7 Sonnet",
-    description: "Latest version of Anthropic's Claude 3.7 Sonnet with strong reasoning and coding capabilities.",
-    apiVersion: "claude-3-7-sonnet-20250219",
-    capabilities: ["Reasoning", "Efficient", "Agentic"]
-  },
-  "qwen-qwq": {
-    provider: "Groq",
-    name: "Qwen QWQ",
-    description: "Latest version of Alibaba's Qwen QWQ with strong reasoning and coding capabilities.",
-    apiVersion: "qwen-qwq",
-    capabilities: ["Reasoning", "Efficient", "Agentic"]
-  },
-  "grok-3-mini": {
-    provider: "XAI",
-    name: "Grok 3 Mini",
-    description: "Latest version of XAI's Grok 3 Mini with strong reasoning and coding capabilities.",
-    apiVersion: "grok-3-mini-latest",
-    capabilities: ["Reasoning", "Efficient", "Agentic"]
   },
   "llama3.2": {
     provider: "Docker Model Runner",
@@ -147,8 +102,6 @@ export const model = customProvider({
 
 export type modelID = keyof typeof languageModels;
 
-export const MODELS = Object.keys(languageModels).filter(modelId => 
-  modelDetails[modelId as keyof typeof languageModels].provider === "Docker Model Runner"
-);
+export const MODELS = Object.keys(languageModels);
 
 export const defaultModel: modelID = "llama3.2";

@@ -143,7 +143,7 @@ export function ChatSidebar() {
                             <Image src="/scira.png" alt="Scira Logo" width={24} height={24} className="absolute transform scale-75" unoptimized quality={100} />
                         </div>
                         {!isCollapsed && (
-                            <div className="font-semibold text-lg text-foreground/90">MCP</div>
+                            <div className="font-semibold text-lg text-foreground/90">Compose</div>
                         )}
                     </div>
                 </div>

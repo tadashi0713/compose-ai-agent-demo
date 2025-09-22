@@ -24,8 +24,8 @@ services:
     use_api_socket: true
     command:
       - --transport=sse
-      - --servers=brave,wikipedia-mcp
-      - --tools=brave_web_search,get_article,get_summary,get_related_topics
+      - --servers=time
+      - --tools=get_current_time
     secrets:
       - mcp_secret
 

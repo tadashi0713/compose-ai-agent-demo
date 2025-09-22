@@ -2,6 +2,7 @@ import { modelID } from "@/ai/providers";
 import { Textarea as ShadcnTextarea } from "@/components/ui/textarea";
 import { ArrowUp, Loader2 } from "lucide-react";
 import { ModelPicker } from "./model-picker";
+import { useRef } from "react";
 
 interface InputProps {
   input: string;
@@ -23,6 +24,7 @@ export const Textarea = ({
   setSelectedModel,
 }: InputProps) => {
   const isStreaming = status === "streaming" || status === "submitted";
+  const isComposingRef = useRef(false);
   
   return (
     <div className="relative w-full">
@@ -32,8 +34,14 @@ export const Textarea = ({
         autoFocus
         placeholder="Send a message..."
         onChange={handleInputChange}
+        onCompositionStart={() => {
+          isComposingRef.current = true;
+        }}
+        onCompositionEnd={() => {
+          isComposingRef.current = false;
+        }}
         onKeyDown={(e) => {
-          if (e.key === "Enter" && !e.shiftKey && !isLoading && input.trim()) {
+          if (e.key === "Enter" && !e.shiftKey && !isLoading && input.trim() && !isComposingRef.current) {
             e.preventDefault();
             e.currentTarget.form?.requestSubmit();
           }

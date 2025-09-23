@@ -54,9 +54,9 @@ const languageModels = {
       middleware
     }
   ),
-  "qwen3:4b-F16": wrapLanguageModel(
+  "qwen3:8B-Q4_0": wrapLanguageModel(
     {
-      model: dmrClient("jimclark106/qwen3:4b-F16", { stream: false }),
+      model: dmrClient("ai/qwen3:8B-Q4_0", { stream: false }),
       middleware
     }
   ),
@@ -77,11 +77,11 @@ export const modelDetails: Record<keyof typeof languageModels, ModelInfo> = {
     apiVersion: "llama3.2",
     capabilities: ["Local", "Efficient", "Open Source"]
   },
-  "qwen3:4b-F16": {
+  "qwen3:8B-Q4_0": {
     provider: "Docker Model Runner",
-    name: "Qwen3 4B F16",
-    description: "Qwen3 4B model without quantization running via Docker Model Runner.",
-    apiVersion: "qwen3:4b-F16",
+    name: "Qwen3 8B Q4_0",
+    description: "Qwen3 8B model with Q4_0 quantization running via Docker Model Runner.",
+    apiVersion: "qwen3:8B-Q4_0",
     capabilities: ["Local", "Open Source"]
   },
 };

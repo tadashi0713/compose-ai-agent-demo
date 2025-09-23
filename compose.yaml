@@ -1,6 +1,9 @@
 models:
   llama3.2:
     model: ai/llama3.2
+  
+  qwen3:
+    model: ai/qwen3:8B-Q4_0
 
 services:
   app:
@@ -14,6 +17,7 @@ services:
       - MCP_GATEWAY_URL=http://mcp-gateway:8811/sse
     models:
       - llama3.2
+      - qwen3
     depends_on:
       - mcp-gateway
       - db

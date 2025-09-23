@@ -40,23 +40,23 @@ const openaiClient = createOpenAI({
   apiKey: getApiKey('OPENAI_API_KEY'),
 });
 
-const llama32Url = process.env['LLAMA3.2_URL'] || 'http://model-runner.docker.internal/engines/llama.cpp/v1';
+const qwen3Url = process.env['QWEN3_URL'] || 'http://model-runner.docker.internal/engines/llama.cpp/v1';
 
 const dmrClient = createDMR({
-  baseURL: llama32Url
+  baseURL: qwen3Url
 });
 
 const languageModels = {
   "gpt-4.1-mini": openaiClient("gpt-4.1-mini"),
-  "llama3.2": wrapLanguageModel(
-    {
-      model: dmrClient("ai/llama3.2", { stream: false }),
-      middleware
-    }
-  ),
   "qwen3:8B-Q4_0": wrapLanguageModel(
     {
       model: dmrClient("ai/qwen3:8B-Q4_0", { stream: false }),
+      middleware
+    }
+  ),
+  "gpt-oss:20B-UD-Q4_K_XL": wrapLanguageModel(
+    {
+      model: dmrClient("ai/gpt-oss:20B-UD-Q4_K_XL", { stream: false }),
       middleware
     }
   ),
@@ -70,18 +70,18 @@ export const modelDetails: Record<keyof typeof languageModels, ModelInfo> = {
     apiVersion: "gpt-4.1-mini",
     capabilities: ["Balance", "Creative", "Vision"]
   },
-  "llama3.2": {
-    provider: "Docker Model Runner",
-    name: "Llama 3.2",
-    description: "Meta's Llama 3.2 model running locally via Docker Model Runner.",
-    apiVersion: "llama3.2",
-    capabilities: ["Local", "Efficient", "Open Source"]
-  },
   "qwen3:8B-Q4_0": {
     provider: "Docker Model Runner",
     name: "Qwen3 8B Q4_0",
     description: "Qwen3 8B model with Q4_0 quantization running via Docker Model Runner.",
     apiVersion: "qwen3:8B-Q4_0",
+    capabilities: ["Local", "Efficient","Open Source"]
+  },
+  "gpt-oss:20B-UD-Q4_K_XL": {
+    provider: "Docker Model Runner",
+    name: "gpt-oss 20B UD-Q4_K_XL",
+    description: "OpenAI’s gpt-oss 20B model with UD-Q4_K_XL quantization running locally via Docker Model Runner.",
+    apiVersion: "gpt-oss:20B-UD-Q4_K_XL",
     capabilities: ["Local", "Open Source"]
   },
 };
@@ -104,4 +104,4 @@ export type modelID = keyof typeof languageModels;
 
 export const MODELS = Object.keys(languageModels);
 
-export const defaultModel: modelID = "llama3.2";
+export const defaultModel: modelID = "qwen3:8B-Q4_0";

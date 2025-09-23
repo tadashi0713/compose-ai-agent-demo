@@ -1,9 +1,9 @@
-models:
-  llama3.2:
-    model: ai/llama3.2
-  
+models:  
   qwen3:
     model: ai/qwen3:8B-Q4_0
+
+  gpt-oss:
+    model: ai/gpt-oss:20B-UD-Q4_K_XL
 
 services:
   app:
@@ -16,8 +16,8 @@ services:
       - DATABASE_URL=postgresql://docker:pass@db:5432/chatstore
       - MCP_GATEWAY_URL=http://mcp-gateway:8811/sse
     models:
-      - llama3.2
       - qwen3
+      - gpt-oss
     depends_on:
       - mcp-gateway
       - db

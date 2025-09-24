@@ -1,6 +1,6 @@
 models:  
   qwen3:
-    model: ai/qwen3:8B-Q4_0
+    model: ai/qwen3
 
   gpt-oss:
     model: ai/gpt-oss

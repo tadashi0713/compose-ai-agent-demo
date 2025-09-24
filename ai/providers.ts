@@ -48,9 +48,9 @@ const dmrClient = createDMR({
 
 const languageModels = {
   "gpt-4.1-mini": openaiClient("gpt-4.1-mini"),
-  "qwen3:8B-Q4_0": wrapLanguageModel(
+  "qwen3": wrapLanguageModel(
     {
-      model: dmrClient("ai/qwen3:8B-Q4_0", { stream: false }),
+      model: dmrClient("ai/qwen3", { stream: false }),
       middleware
     }
   ),
@@ -70,17 +70,17 @@ export const modelDetails: Record<keyof typeof languageModels, ModelInfo> = {
     apiVersion: "gpt-4.1-mini",
     capabilities: ["Balance", "Creative", "Vision"]
   },
-  "qwen3:8B-Q4_0": {
+  "qwen3": {
     provider: "Docker Model Runner",
-    name: "Qwen3 8B Q4_0",
-    description: "Qwen3 8B model with Q4_0 quantization running via Docker Model Runner.",
-    apiVersion: "qwen3:8B-Q4_0",
+    name: "Qwen3",
+    description: "Qwen3 model running via Docker Model Runner.",
+    apiVersion: "qwen3",
     capabilities: ["Local", "Efficient","Open Source"]
   },
   "gpt-oss": {
     provider: "Docker Model Runner",
-    name: "gpt-oss 20B UD-Q4_K_XL",
-    description: "OpenAI’s gpt-oss 20B model with UD-Q4_K_XL quantization running locally via Docker Model Runner.",
+    name: "gpt-oss",
+    description: "OpenAI’s gpt-oss model running locally via Docker Model Runner.",
     apiVersion: "gpt-oss",
     capabilities: ["Local", "Open Source"]
   },
@@ -104,4 +104,4 @@ export type modelID = keyof typeof languageModels;
 
 export const MODELS = Object.keys(languageModels);
 
-export const defaultModel: modelID = "qwen3:8B-Q4_0";
+export const defaultModel: modelID = "qwen3";

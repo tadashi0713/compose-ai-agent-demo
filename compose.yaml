@@ -28,8 +28,9 @@ services:
     use_api_socket: true
     command:
       - --transport=sse
-      - --servers=time
-      - --tools=get_current_time
+      - --servers=openweather,github
+      - --tools=openweather:weather
+      - --tools=github:create_issue
     secrets:
       - mcp_secret
 

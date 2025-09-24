@@ -54,9 +54,9 @@ const languageModels = {
       middleware
     }
   ),
-  "gpt-oss:20B-UD-Q4_K_XL": wrapLanguageModel(
+  "gpt-oss": wrapLanguageModel(
     {
-      model: dmrClient("ai/gpt-oss:20B-UD-Q4_K_XL", { stream: false }),
+      model: dmrClient("ai/gpt-oss", { stream: false }),
       middleware
     }
   ),
@@ -77,11 +77,11 @@ export const modelDetails: Record<keyof typeof languageModels, ModelInfo> = {
     apiVersion: "qwen3:8B-Q4_0",
     capabilities: ["Local", "Efficient","Open Source"]
   },
-  "gpt-oss:20B-UD-Q4_K_XL": {
+  "gpt-oss": {
     provider: "Docker Model Runner",
     name: "gpt-oss 20B UD-Q4_K_XL",
     description: "OpenAI’s gpt-oss 20B model with UD-Q4_K_XL quantization running locally via Docker Model Runner.",
-    apiVersion: "gpt-oss:20B-UD-Q4_K_XL",
+    apiVersion: "gpt-oss",
     capabilities: ["Local", "Open Source"]
   },
 };

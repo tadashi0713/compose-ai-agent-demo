@@ -3,7 +3,7 @@ models:
     model: ai/qwen3:8B-Q4_0
 
   gpt-oss:
-    model: ai/gpt-oss:20B-UD-Q4_K_XL
+    model: ai/gpt-oss
 
 services:
   app:

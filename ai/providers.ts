@@ -20,24 +20,8 @@ const middleware = extractReasoningMiddleware({
   tagName: 'think',
 });
 
-// Helper to get API keys from environment variables first, then localStorage
-const getApiKey = (key: string): string | undefined => {
-  // Check for environment variables first
-  if (process.env[key]) {
-    return process.env[key] || undefined;
-  }
-
-  // Fall back to localStorage if available
-  if (typeof window !== 'undefined') {
-    return window.localStorage.getItem(key) || undefined;
-  }
-
-  return undefined;
-};
-
-// Create provider instances with API keys from localStorage
 const openaiClient = createOpenAI({
-  apiKey: getApiKey('OPENAI_API_KEY'),
+  apiKey: process.env['OPENAI_API_KEY'],
 });
 
 const qwen3Url = process.env['QWEN3_URL'] || 'http://model-runner.docker.internal/engines/llama.cpp/v1';
@@ -85,16 +69,6 @@ export const modelDetails: Record<keyof typeof languageModels, ModelInfo> = {
     capabilities: ["Local", "Open Source"]
   },
 };
-
-// Update API keys when localStorage changes (for runtime updates)
-if (typeof window !== 'undefined') {
-  window.addEventListener('storage', (event) => {
-    // Reload the page if any API key changed to refresh the providers
-    if (event.key?.includes('API_KEY')) {
-      window.location.reload();
-    }
-  });
-}
 
 export const model = customProvider({
   languageModels,

@@ -24,10 +24,8 @@ const openaiClient = createOpenAI({
   apiKey: process.env['OPENAI_API_KEY'],
 });
 
-const qwen3Url = process.env['QWEN3_URL'] || 'http://model-runner.docker.internal/engines/llama.cpp/v1';
-
 const dmrClient = createDMR({
-  baseURL: qwen3Url
+  baseURL: 'http://model-runner.docker.internal/engines/llama.cpp/v1'
 });
 
 const languageModels = {

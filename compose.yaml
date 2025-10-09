@@ -6,6 +6,17 @@ models:
     model: ai/gpt-oss
 
 services:
+  mcp-gateway:
+    image: docker/mcp-gateway:latest
+    use_api_socket: true
+    command:
+      - --transport=sse
+      - --servers=time,github
+      - --tools=time:get_current_time
+      - --tools=github:create_issue
+    secrets:
+      - mcp_secret
+
   app:
     build:
       context: .
@@ -23,17 +34,6 @@ services:
       - mcp-gateway
       - db
       - initialize-db-schema
-
-  mcp-gateway:
-    image: docker/mcp-gateway:latest
-    use_api_socket: true
-    command:
-      - --transport=sse
-      - --servers=time,github
-      - --tools=time:get_current_time
-      - --tools=github:create_issue
-    secrets:
-      - mcp_secret
 
   db:
     image: postgres:17.6-alpine

@@ -18,6 +18,7 @@ services:
       - mcp_secret
 
   app:
+    image: tadashinemoto567/compose-ai-agent-demo-app
     build:
       context: .
       dockerfile: Dockerfile
@@ -53,6 +54,7 @@ services:
       start_period: 10s
 
   initialize-db-schema:
+    image: tadashinemoto567/compose-ai-agent-demo-initialize-db-schema
     build:
       context: .
       dockerfile: Dockerfile.initialize-db-schema

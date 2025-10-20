@@ -29,5 +29,4 @@ RUN pnpm run build
 EXPOSE 3000
 
 # Set entrypoint
-ENTRYPOINT ["pnpm", "run", "start"]
-
+CMD ["pnpm", "run", "start:with-db-init"]

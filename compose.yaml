@@ -35,9 +35,10 @@ services:
       - qwen3
       - gpt-oss
     depends_on:
-      - mcp-gateway
-      - db
-      - initialize-db-schema
+      db:
+        condition: service_healthy
+      mcp-gateway:
+        condition: service_started
 
   db:
     image: postgres:17.6-alpine
@@ -55,20 +56,6 @@ services:
       timeout: 5s
       retries: 5
       start_period: 10s
-
-  initialize-db-schema:
-    image: tadashinemoto567/compose-ai-agent-demo-initialize-db-schema
-    build:
-      context: .
-      dockerfile: Dockerfile.initialize-db-schema
-      platforms:
-        - linux/amd64
-        - linux/arm64
-    environment:
-      - DATABASE_URL=postgresql://docker:pass@db:5432/chatstore
-    depends_on:
-      db:
-        condition: service_healthy
 
 volumes:
   chat_store:

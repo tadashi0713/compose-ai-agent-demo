@@ -14,6 +14,7 @@ export const startMcpSandbox = async ({
     const daytona = new Daytona();
     const sandbox = await daytona.create(
       {
+      image: "ubuntu:22.04",
       resources: {
         cpu: 2,
         memory: 4,

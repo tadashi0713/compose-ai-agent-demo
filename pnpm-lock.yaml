@@ -27,8 +27,8 @@ importers:
         specifier: ^3.821.0
         version: 3.821.0
       '@daytonaio/sdk':
-        specifier: ^0.114.0
-        version: 0.114.0(ws@8.18.3)
+        specifier: ^0.115.0
+        version: 0.115.0(ws@8.18.3)
       '@neondatabase/serverless':
         specifier: ^1.0.0
         version: 1.0.2
@@ -396,14 +396,14 @@ packages:
   '@cloudflare/workers-types@4.20250419.0':
     resolution: {integrity: sha512-uu8gZ8P6teFsyfJOIXBrNC4ZsjLWPUEMeDqbQCdJ8OA6Rs/8QoUYD7ZSLW2kxsO/6upcbZir1WGrWp8088aVWg==}
 
-  '@daytonaio/api-client@0.114.0':
-    resolution: {integrity: sha512-gjGAUH8YjPG+7NnzP0cbNUEpjitonhg8TMdN75b5/u9MnAq7xGf4Dfuk7rCd5WESebyYUn37pnzcAjRKyNyn8g==}
+  '@daytonaio/api-client@0.115.0':
+    resolution: {integrity: sha512-L7kawrbFWu62VN0ENnKGoE2N7Q+nyLhogvQBSi6IgPY7rjAlvwjSGiw1VSnjyRQsy38lTVMuzES7E1lF7e7evg==}
 
-  '@daytonaio/sdk@0.114.0':
-    resolution: {integrity: sha512-T2CPSsXO4WkratHkpCUVvWm1Z0ac4/ZgYdmAkMFRjW5hy3RRspmokf0QMfZxPr1yv6Xgv9lEULoSJDroqI9rwQ==}
+  '@daytonaio/sdk@0.115.0':
+    resolution: {integrity: sha512-YS3I5+bZIvRx/va9B2eIvT2Sa4RO2FRUM4DRX6EeBD3eUA9v79L6iCVjBO1JKHeoBZm4CRlr9Tl+AOEdfKxqCg==}
 
-  '@daytonaio/toolbox-api-client@0.114.0':
-    resolution: {integrity: sha512-gADKZEXaaxUZSFvOYlW8vGCMNAmaaberPZ4hlDujnJqbg4GLXNuFPV6Xsxl7gamrbZMPZknraxJnhw7/wwb7wg==}
+  '@daytonaio/toolbox-api-client@0.115.0':
+    resolution: {integrity: sha512-MwH+imolVRtHo8ak3AnawssvjrQ7YFR3DU+GPHVe5cSmNUOYygYNHKvMk7pTX794ok9xPQa6YMbhiIeIV3y9sg==}
 
   '@drizzle-team/brocli@0.10.2':
     resolution: {integrity: sha512-z33Il7l5dKjUgGULTqBsQBQwckHh5AbIuxhdsIxDDiZAzBOrZO6q9ogcWC65kU382AfynTfgNumVcNIjuIua6w==}
@@ -4842,18 +4842,18 @@ snapshots:
   '@cloudflare/workers-types@4.20250419.0':
     optional: true
 
-  '@daytonaio/api-client@0.114.0':
+  '@daytonaio/api-client@0.115.0':
     dependencies:
       axios: 1.13.2
     transitivePeerDependencies:
       - debug
 
-  '@daytonaio/sdk@0.114.0(ws@8.18.3)':
+  '@daytonaio/sdk@0.115.0(ws@8.18.3)':
     dependencies:
       '@aws-sdk/client-s3': 3.821.0
       '@aws-sdk/lib-storage': 3.821.0(@aws-sdk/client-s3@3.821.0)
-      '@daytonaio/api-client': 0.114.0
-      '@daytonaio/toolbox-api-client': 0.114.0
+      '@daytonaio/api-client': 0.115.0
+      '@daytonaio/toolbox-api-client': 0.115.0
       '@iarna/toml': 2.2.5
       axios: 1.13.2
       busboy: 1.6.0
@@ -4870,7 +4870,7 @@ snapshots:
       - debug
       - ws
 
-  '@daytonaio/toolbox-api-client@0.114.0':
+  '@daytonaio/toolbox-api-client@0.115.0':
     dependencies:
       axios: 1.13.2
     transitivePeerDependencies:

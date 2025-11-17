@@ -176,7 +176,7 @@ importers:
         version: 15.3.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.8.3)
       pg-pool:
         specifier: ^3.8.0
-        version: 3.8.0(pg@8.16.3)
+        version: 3.10.1(pg@8.16.3)
       tailwindcss:
         specifier: ^4.1.8
         version: 4.1.17
@@ -3635,11 +3635,6 @@ packages:
 
   pg-pool@3.10.1:
     resolution: {integrity: sha512-Tu8jMlcX+9d8+QVzKIvM/uJtp07PKr82IUOYEphaWcoBhIYkoHpLXN3qO59nAI11ripznDsEzEv8nUxBVWajGg==}
-    peerDependencies:
-      pg: '>=8.0'
-
-  pg-pool@3.8.0:
-    resolution: {integrity: sha512-VBw3jiVm6ZOdLBTIcXLNdSotb6Iy3uOCwDGFAksZCXmi10nyRvnP2v3jl4d+IsLYRyXf6o9hIm/ZtUzlByNUdw==}
     peerDependencies:
       pg: '>=8.0'
 
@@ -8167,10 +8162,6 @@ snapshots:
   pg-int8@1.0.1: {}
 
   pg-pool@3.10.1(pg@8.16.3):
-    dependencies:
-      pg: 8.16.3
-
-  pg-pool@3.8.0(pg@8.16.3):
     dependencies:
       pg: 8.16.3
 

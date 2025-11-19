@@ -70,7 +70,7 @@
     "drizzle-kit": "^0.31.7",
     "esbuild": ">=0.25.3",
     "eslint": "^9.24.0",
-    "eslint-config-next": "15.3.0",
+    "eslint-config-next": "15.5.6",
     "pg-pool": "^3.8.0",
     "tailwindcss": "^4.1.8",
     "typescript": "^5.8.3"

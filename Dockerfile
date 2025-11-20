@@ -1,5 +1,5 @@
 # Production stage
-FROM node:20.19-alpine3.22
+FROM node:24.11-alpine3.22
 # FROM demonstrationorg/dhi-node-tadashi:20.19-alpine3.22-dev
 
 # Enable corepack to use pnpm

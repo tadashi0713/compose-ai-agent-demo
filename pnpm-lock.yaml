@@ -28,7 +28,7 @@ importers:
         version: 3.935.0
       '@daytonaio/sdk':
         specifier: ^0.115.0
-        version: 0.115.0(ws@8.18.3)
+        version: 0.115.2(ws@8.18.3)
       '@neondatabase/serverless':
         specifier: ^1.0.0
         version: 1.0.2
@@ -291,11 +291,11 @@ packages:
     resolution: {integrity: sha512-Rzw4BxPBEyw5XyXy0NYy2yzgPDnvEaPe5IIq+xNRqMpcwI1Wxnb9eNJQTz2YhULLy/nAD1Xs/6hEMwZl1x/GLQ==}
     engines: {node: '>=18.0.0'}
 
-  '@aws-sdk/lib-storage@3.821.0':
-    resolution: {integrity: sha512-79N58EjrNOFbbegxJoeR1d9TH3MTV8gfpob5gIpXnZWl27gSJYPaD5K7vNS1wbwFEnIWMp9esRO3TtEMb/UAPg==}
+  '@aws-sdk/lib-storage@3.936.0':
+    resolution: {integrity: sha512-56X4b/w8omhowteTHu5+lQy/c6s3N+EFmdcJisanUZtorr6l4NFrqCXGBTwo8dIEwzJ7gdDRoyMFH0iTBeerPQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
-      '@aws-sdk/client-s3': ^3.821.0
+      '@aws-sdk/client-s3': ^3.936.0
 
   '@aws-sdk/middleware-bucket-endpoint@3.930.0':
     resolution: {integrity: sha512-cnCLWeKPYgvV4yRYPFH6pWMdUByvu2cy2BAlfsPpvnm4RaVioztyvxmQj5PmVN5fvWs5w/2d6U7le8X9iye2sA==}
@@ -396,14 +396,14 @@ packages:
   '@cloudflare/workers-types@4.20250419.0':
     resolution: {integrity: sha512-uu8gZ8P6teFsyfJOIXBrNC4ZsjLWPUEMeDqbQCdJ8OA6Rs/8QoUYD7ZSLW2kxsO/6upcbZir1WGrWp8088aVWg==}
 
-  '@daytonaio/api-client@0.115.0':
-    resolution: {integrity: sha512-L7kawrbFWu62VN0ENnKGoE2N7Q+nyLhogvQBSi6IgPY7rjAlvwjSGiw1VSnjyRQsy38lTVMuzES7E1lF7e7evg==}
+  '@daytonaio/api-client@0.115.2':
+    resolution: {integrity: sha512-WUXjxYpHtVygE6hlFj1ZeevuKtm5INf8GwDHWFWxsekREdDjiYZw30E1q7mlwDnAlFJsVSZ6pKYYuKb3NEoIAQ==}
 
-  '@daytonaio/sdk@0.115.0':
-    resolution: {integrity: sha512-YS3I5+bZIvRx/va9B2eIvT2Sa4RO2FRUM4DRX6EeBD3eUA9v79L6iCVjBO1JKHeoBZm4CRlr9Tl+AOEdfKxqCg==}
+  '@daytonaio/sdk@0.115.2':
+    resolution: {integrity: sha512-fV9eJ24xH8Dksw/uHBJTReHlR4ZN3cgIc2A1PL3FP9nT5j3mN+O3jxYfSclI/TCibn6YuJ6oaAAw3wHGVBXULg==}
 
-  '@daytonaio/toolbox-api-client@0.115.0':
-    resolution: {integrity: sha512-MwH+imolVRtHo8ak3AnawssvjrQ7YFR3DU+GPHVe5cSmNUOYygYNHKvMk7pTX794ok9xPQa6YMbhiIeIV3y9sg==}
+  '@daytonaio/toolbox-api-client@0.115.2':
+    resolution: {integrity: sha512-Tew21aL7dN8WG5m1UGXoxIOpk9EM4jogZMi99M8rZPEVQkFK8jO+/8EgHw1iw3zobiqgnmitEKCxghKYLVbvww==}
 
   '@drizzle-team/brocli@0.10.2':
     resolution: {integrity: sha512-z33Il7l5dKjUgGULTqBsQBQwckHh5AbIuxhdsIxDDiZAzBOrZO6q9ogcWC65kU382AfynTfgNumVcNIjuIua6w==}
@@ -1645,10 +1645,6 @@ packages:
   '@rushstack/eslint-patch@1.11.0':
     resolution: {integrity: sha512-zxnHvoMQVqewTJr/W4pKjF0bMGiKJv1WX7bSrkl46Hg0QjESbzBROWK0Wg4RphzSOS5Jiy7eFimmM3UgMrMZbQ==}
 
-  '@smithy/abort-controller@4.0.4':
-    resolution: {integrity: sha512-gJnEjZMvigPDQWHrW3oPrFhQtkrgqBkyjj3pCIdF3A5M6vsZODG93KNlfJprv6bp4245bdT32fsHK4kkH3KYDA==}
-    engines: {node: '>=18.0.0'}
-
   '@smithy/abort-controller@4.2.5':
     resolution: {integrity: sha512-j7HwVkBw68YW8UmFRcjZOmssE77Rvk0GWAIN1oFBhsaovQmZWYCIcGa9/pwRB0ExI8Sk9MWNALTjftjHZea7VA==}
     engines: {node: '>=18.0.0'}
@@ -2847,8 +2843,8 @@ packages:
   flatted@3.3.3:
     resolution: {integrity: sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==}
 
-  follow-redirects@1.15.9:
-    resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
+  follow-redirects@1.15.11:
+    resolution: {integrity: sha512-deG2P0JfjrTxl50XGCDyfI97ZGVCxIpfKYmfyrQ54n5FO/0gfIES8C/Psl6kWVDolizcaaxZJnTS0QSMxvnsBQ==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -2860,8 +2856,8 @@ packages:
     resolution: {integrity: sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg==}
     engines: {node: '>= 0.4'}
 
-  form-data@4.0.4:
-    resolution: {integrity: sha512-KrGhL9Q4zjj0kiUt5OO4Mr/A/jlI2jDYs5eHBpYHPcBEVSiipAvn2Ko2HnPe20rmcuuvMHNdZFp+4IlGTMF0Ow==}
+  form-data@4.0.5:
+    resolution: {integrity: sha512-8RipRLol37bNs2bhoV67fiTEvdTrbMUYcFTiy3+wuuOnUog2QBHCZWXDRijWQfAkhBj2Uf5UnVaiWwA5vdd82w==}
     engines: {node: '>= 6'}
 
   format@0.2.2:
@@ -4522,10 +4518,10 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/lib-storage@3.821.0(@aws-sdk/client-s3@3.935.0)':
+  '@aws-sdk/lib-storage@3.936.0(@aws-sdk/client-s3@3.935.0)':
     dependencies:
       '@aws-sdk/client-s3': 3.935.0
-      '@smithy/abort-controller': 4.0.4
+      '@smithy/abort-controller': 4.2.5
       '@smithy/middleware-endpoint': 4.3.12
       '@smithy/smithy-client': 4.9.8
       buffer: 5.6.0
@@ -4747,25 +4743,25 @@ snapshots:
   '@cloudflare/workers-types@4.20250419.0':
     optional: true
 
-  '@daytonaio/api-client@0.115.0':
+  '@daytonaio/api-client@0.115.2':
     dependencies:
       axios: 1.13.2
     transitivePeerDependencies:
       - debug
 
-  '@daytonaio/sdk@0.115.0(ws@8.18.3)':
+  '@daytonaio/sdk@0.115.2(ws@8.18.3)':
     dependencies:
       '@aws-sdk/client-s3': 3.935.0
-      '@aws-sdk/lib-storage': 3.821.0(@aws-sdk/client-s3@3.935.0)
-      '@daytonaio/api-client': 0.115.0
-      '@daytonaio/toolbox-api-client': 0.115.0
+      '@aws-sdk/lib-storage': 3.936.0(@aws-sdk/client-s3@3.935.0)
+      '@daytonaio/api-client': 0.115.2
+      '@daytonaio/toolbox-api-client': 0.115.2
       '@iarna/toml': 2.2.5
       axios: 1.13.2
       busboy: 1.6.0
       dotenv: 17.2.3
       expand-tilde: 2.0.2
       fast-glob: 3.3.3
-      form-data: 4.0.4
+      form-data: 4.0.5
       isomorphic-ws: 5.0.0(ws@8.18.3)
       pathe: 2.0.3
       shell-quote: 1.8.3
@@ -4775,7 +4771,7 @@ snapshots:
       - debug
       - ws
 
-  '@daytonaio/toolbox-api-client@0.115.0':
+  '@daytonaio/toolbox-api-client@0.115.2':
     dependencies:
       axios: 1.13.2
     transitivePeerDependencies:
@@ -5751,11 +5747,6 @@ snapshots:
 
   '@rushstack/eslint-patch@1.11.0': {}
 
-  '@smithy/abort-controller@4.0.4':
-    dependencies:
-      '@smithy/types': 4.9.0
-      tslib: 2.8.1
-
   '@smithy/abort-controller@4.2.5':
     dependencies:
       '@smithy/types': 4.9.0
@@ -6491,8 +6482,8 @@ snapshots:
 
   axios@1.13.2:
     dependencies:
-      follow-redirects: 1.15.9
-      form-data: 4.0.4
+      follow-redirects: 1.15.11
+      form-data: 4.0.5
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
@@ -7175,13 +7166,13 @@ snapshots:
 
   flatted@3.3.3: {}
 
-  follow-redirects@1.15.9: {}
+  follow-redirects@1.15.11: {}
 
   for-each@0.3.5:
     dependencies:
       is-callable: 1.2.7
 
-  form-data@4.0.4:
+  form-data@4.0.5:
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8

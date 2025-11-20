@@ -1,6 +1,4 @@
-FROM node:20.19-alpine3.22
-
-RUN corepack enable
+FROM demonstrationorg/dhi-node-tadashi:20-alpine3.22-dev_pnpm
 
 WORKDIR /app
 

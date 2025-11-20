@@ -41,7 +41,7 @@ services:
         condition: service_started
 
   db:
-    image: postgres:17.6-alpine
+    image: postgres:17.7-alpine
     environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=pass

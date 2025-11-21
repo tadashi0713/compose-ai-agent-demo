@@ -41,7 +41,8 @@ services:
         condition: service_started
 
   db:
-    image: postgres:17.7-alpine
+    image: postgres:17.7-alpine3.22
+    # image: demonstrationorg/dhi-postgres-tadashi:17.7-alpine3.22
     environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=pass

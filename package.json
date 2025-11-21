@@ -43,14 +43,14 @@
     "lucide-react": "^0.554.0",
     "motion": "^12.16.0",
     "nanoid": "^5.1.5",
-    "next": "^15.4.7",
+    "next": "^16.0.0",
     "next-themes": "^0.4.6",
     "or": "^0.2.0",
     "pg": "^8.16.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-markdown": "^10.1.0",
-    "react-syntax-highlighter": "^15.6.1",
+    "react-syntax-highlighter": "^16.0.0",
     "remark-gfm": "^4.0.1",
     "sonner": "^2.0.5",
     "tailwind-merge": "^3.2.0",
@@ -70,7 +70,7 @@
     "drizzle-kit": "^0.31.7",
     "esbuild": "^0.27.0",
     "eslint": "^9.24.0",
-    "eslint-config-next": "15.5.6",
+    "eslint-config-next": "16.0.3",
     "pg-pool": "^3.8.0",
     "tailwindcss": "^4.1.8",
     "typescript": "^5.8.3"
@@ -90,5 +90,5 @@
       "js-yaml@>=4.0.0 <4.1.1": ">=4.1.1"
     }
   },
-  "packageManager": "pnpm@10.22.0+sha512.bf049efe995b28f527fd2b41ae0474ce29186f7edcb3bf545087bd61fbbebb2bf75362d1307fda09c2d288e1e499787ac12d4fcb617a974718a6051f2eee741c"
+  "packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b"
 }

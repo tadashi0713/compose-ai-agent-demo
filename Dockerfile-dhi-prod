@@ -1,0 +1,19 @@
+FROM demonstrationorg/dhi-node-tadashi:20-alpine3.22-dev_pnpm AS builder
+
+WORKDIR /app
+
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install
+
+COPY . .
+RUN pnpm run build
+
+FROM demonstrationorg/dhi-node-tadashi:20-alpine3.22_pnpm
+
+WORKDIR /app
+
+COPY --from=builder /app /app
+
+EXPOSE 3000
+
+CMD ["pnpm", "run", "start:with-db-init"]

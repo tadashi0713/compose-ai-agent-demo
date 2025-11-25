@@ -1,0 +1,65 @@
+models:  
+  qwen3:
+    model: ai/qwen3
+    x-azure-deployment:
+      workloadProfiles:
+        workloadProfileType: Consumption-GPU-NC8as-T4
+
+services:
+  mcp-gateway:
+    image: docker/mcp-gateway:latest
+    use_api_socket: true
+    command:
+      - --transport=sse
+      - --servers=time,github
+      - --tools=time:get_current_time
+      - --tools=github:create_issue
+    secrets:
+      - mcp_secret
+
+  app:
+    image: tadashinemoto567/compose-ai-agent-demo-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms:
+        - linux/amd64
+        - linux/arm64
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://docker:pass@db:5432/chatstore
+      - MCP_GATEWAY_URL=http://mcp-gateway:8811/sse
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    models:
+      - qwen3
+    depends_on:
+      db:
+        condition: service_healthy
+      mcp-gateway:
+        condition: service_started
+
+  db:
+    image: postgres:18.1-alpine3.22
+    # image: demonstrationorg/dhi-postgres-tadashi:18.1-alpine3.22
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=chatstore
+    volumes:
+      - db:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U docker -d chatstore"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  db:
+
+secrets:
+  mcp_secret:
+    file: ./.mcp.env

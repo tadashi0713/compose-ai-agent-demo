@@ -1,5 +1,5 @@
 import { createOpenAI } from "@ai-sdk/openai";
-import { createDMR } from "./dmr";
+import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 
 
 import {
@@ -26,21 +26,22 @@ const openaiClient = createOpenAI({
 
 const qwen3Url = process.env['QWEN3_URL'] || 'http://model-runner.docker.internal/engines/llama.cpp/v1';
 
-const dmrClient = createDMR({
-  baseURL: qwen3Url
+const dmrClient = createOpenAICompatible({
+  baseURL: qwen3Url,
+  name: ""
 });
 
 const languageModels = {
   "gpt-4.1-mini": openaiClient("gpt-4.1-mini"),
   "qwen3": wrapLanguageModel(
     {
-      model: dmrClient("ai/qwen3", { stream: false }),
+      model: dmrClient("ai/qwen3"),
       middleware
     }
   ),
   "gpt-oss": wrapLanguageModel(
     {
-      model: dmrClient("ai/gpt-oss", { stream: false }),
+      model: dmrClient("ai/gpt-oss"),
       middleware
     }
   ),

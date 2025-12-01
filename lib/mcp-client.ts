@@ -1,4 +1,4 @@
-import { experimental_createMCPClient as createMCPClient } from '@ai-sdk/mcp';
+import { experimental_createMCPClient as createMCPClient } from 'ai';
 
 export interface KeyValuePair {
   key: string;

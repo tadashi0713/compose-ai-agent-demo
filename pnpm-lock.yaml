@@ -16,9 +16,6 @@ importers:
 
   .:
     dependencies:
-      '@ai-sdk/mcp':
-        specifier: ^0.0.11
-        version: 0.0.11(zod@3.25.76)
       '@ai-sdk/openai':
         specifier: ^1.3.22
         version: 1.3.24(zod@3.25.76)
@@ -196,12 +193,6 @@ importers:
         version: 5.9.3
 
 packages:
-
-  '@ai-sdk/mcp@0.0.11':
-    resolution: {integrity: sha512-n0oZsxhPdMaXhAn6LrpMpxABufmeSatfhR3epbrCjJcLEHPOucKwQciwE8CTgIGgwBxHNy1FFLZmcFI77JmJfg==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      zod: ^3.25.76 || ^4.1.8
 
   '@ai-sdk/openai-compatible@0.2.16':
     resolution: {integrity: sha512-LkvfcM8slJedRyJa/MiMiaOzcMjV1zNDwzTHEGz7aAsgsQV0maLfmJRi/nuSwf5jmp0EouC+JXXDUj2l94HgQw==}
@@ -3499,10 +3490,6 @@ packages:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
 
-  pkce-challenge@5.0.1:
-    resolution: {integrity: sha512-wQ0b/W4Fr01qtpHlqSqspcj3EhBvimsdh0KlHhH8HRZnMsEa0ea2fTULOXOS9ccQr3om+GcGRk4e+isrZWV8qQ==}
-    engines: {node: '>=16.20.0'}
-
   possible-typed-array-names@1.1.0:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
     engines: {node: '>= 0.4'}
@@ -4067,13 +4054,6 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
-
-  '@ai-sdk/mcp@0.0.11(zod@3.25.76)':
-    dependencies:
-      '@ai-sdk/provider': 2.0.0
-      '@ai-sdk/provider-utils': 3.0.18(zod@3.25.76)
-      pkce-challenge: 5.0.1
-      zod: 3.25.76
 
   '@ai-sdk/openai-compatible@0.2.16(zod@3.25.76)':
     dependencies:
@@ -7996,8 +7976,6 @@ snapshots:
   picomatch@2.3.1: {}
 
   picomatch@4.0.3: {}
-
-  pkce-challenge@5.0.1: {}
 
   possible-typed-array-names@1.1.0: {}
 

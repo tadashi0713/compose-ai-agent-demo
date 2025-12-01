@@ -41,14 +41,14 @@ services:
         condition: service_started
 
   db:
-    image: postgres:18.1-alpine3.22
-    # image: demonstrationorg/dhi-postgres-tadashi:18.1-alpine3.22
+    image: postgres:18.1
+    # image: demonstrationorg/dhi-postgres-tadashi:18.1
     environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=pass
       - POSTGRES_DB=chatstore
     volumes:
-      - db:/var/lib/postgresql
+      - db:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     healthcheck:

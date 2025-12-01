@@ -1,4 +1,5 @@
-FROM node:20.19-alpine3.22
+FROM node:20.19.6-slim
+# FROM demonstrationorg/dhi-node-tadashi:20.19.6-dev_corepack
 
 RUN corepack enable
 

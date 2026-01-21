@@ -36,8 +36,8 @@ importers:
         specifier: ^3.821.0
         version: 3.948.0
       '@daytonaio/sdk':
-        specifier: ^0.121.0
-        version: 0.121.0(ws@8.18.3)
+        specifier: ^0.134.0
+        version: 0.134.0(ws@8.18.3)
       '@neondatabase/serverless':
         specifier: ^1.0.0
         version: 1.0.2
@@ -483,14 +483,14 @@ packages:
     resolution: {integrity: sha512-qQ5m48eI/MFLQ5PxQj4PFaprjyCTLI37ElWMmNs0K8Lk3dVeOdNpB3ks8jc7yM5CDmVC73eMVk/trk3fgmrUpA==}
     engines: {node: '>=6.9.0'}
 
-  '@daytonaio/api-client@0.121.0':
-    resolution: {integrity: sha512-+6pR6WtYEzn0G2JdTpoM+h3CYdlfUfSqs+J1r4+6vXWEYv7IHwGTyDfYqhGZv/PN82mhRCH0BbPtvY2CsT6fzg==}
+  '@daytonaio/api-client@0.134.0':
+    resolution: {integrity: sha512-GNkywDBzSJmKBDl6wLWghGergxkFbMrpLntq/xZI0rnV423mAd2Te3c8awEkWPzCEvrsvLoFfRNSSloqPRiBnA==}
 
-  '@daytonaio/sdk@0.121.0':
-    resolution: {integrity: sha512-8mKLRl5nNXbCaCWVCejOLrVUV0SS3gEIr7hZOwY1MtxudZhcZ0GsVc396QGH1k6nLYd3EhApkvEHqX2f1arqFg==}
+  '@daytonaio/sdk@0.134.0':
+    resolution: {integrity: sha512-ZJjvkPIm4IYEFL5YEHE2lXlBdNiQ/DMqYudruCTRXvEjNidikmd0aD97s++/jA5U1m9tXNJiSkmY8h/4ssBuNg==}
 
-  '@daytonaio/toolbox-api-client@0.121.0':
-    resolution: {integrity: sha512-RaMyxcXgh7l9+34pvKLh7iV6jNFb3CdXuokKpkHnAerLXntXQy4DrZ5JnRgytU5fO3gt03dXRN+fYD5VIsnSmA==}
+  '@daytonaio/toolbox-api-client@0.134.0':
+    resolution: {integrity: sha512-bw5u/NGgQXR8h09cLMAWDpT7NsG0SOk9rXSEaSCM7xWKyiDC6lzGvcvH1BV/sW+5r8jyzpfUsM5Y2WjIzZoJsg==}
 
   '@dmsnell/diff-match-patch@1.1.0':
     resolution: {integrity: sha512-yejLPmM5pjsGvxS9gXablUSbInW7H976c/FJ4iQxWIm7/38xBySRemTPDe34lhg1gVLbJntX0+sH0jYfU+PN9A==}
@@ -3849,6 +3849,7 @@ packages:
   tar@6.2.1:
     resolution: {integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==}
     engines: {node: '>=10'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   throttleit@2.1.0:
     resolution: {integrity: sha512-nt6AMGKW1p/70DF/hGBdJB57B8Tspmbp5gfJ8ilhLnt7kkr2ye7hzD6NVG8GGErk2HWF34igrL2CXmNIkzKqKw==}
@@ -4701,18 +4702,18 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
-  '@daytonaio/api-client@0.121.0':
+  '@daytonaio/api-client@0.134.0':
     dependencies:
       axios: 1.13.2
     transitivePeerDependencies:
       - debug
 
-  '@daytonaio/sdk@0.121.0(ws@8.18.3)':
+  '@daytonaio/sdk@0.134.0(ws@8.18.3)':
     dependencies:
       '@aws-sdk/client-s3': 3.948.0
       '@aws-sdk/lib-storage': 3.937.0(@aws-sdk/client-s3@3.948.0)
-      '@daytonaio/api-client': 0.121.0
-      '@daytonaio/toolbox-api-client': 0.121.0
+      '@daytonaio/api-client': 0.134.0
+      '@daytonaio/toolbox-api-client': 0.134.0
       '@iarna/toml': 2.2.5
       axios: 1.13.2
       busboy: 1.6.0
@@ -4729,7 +4730,7 @@ snapshots:
       - debug
       - ws
 
-  '@daytonaio/toolbox-api-client@0.121.0':
+  '@daytonaio/toolbox-api-client@0.134.0':
     dependencies:
       axios: 1.13.2
     transitivePeerDependencies:

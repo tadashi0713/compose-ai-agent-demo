@@ -1,5 +1,5 @@
-FROM node:20.19.6-slim
-# FROM demonstrationorg/dhi-node-tadashi:20.19.6-dev_corepack
+# FROM node:20.20-slim
+FROM dhi.io/node:20.20-debian13-dev
 
 RUN corepack enable
 

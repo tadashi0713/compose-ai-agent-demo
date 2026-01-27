@@ -42,7 +42,7 @@ services:
 
   db:
     image: postgres:18.1
-    # image: demonstrationorg/dhi-postgres-tadashi:18.1
+    # image: dhi.io/postgres:18.1
     environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=pass

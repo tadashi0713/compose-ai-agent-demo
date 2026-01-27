@@ -83,7 +83,6 @@
     ],
     "overrides": {
       "esbuild": "^0.27.0",
-      "prismjs@<1.30.0": ">=1.30.0",
       "jsondiffpatch@<0.7.2": ">=0.7.2",
       "js-yaml@>=4.0.0 <4.1.1": ">=4.1.1",
       "mdast-util-to-hast": ">=13.2.1",

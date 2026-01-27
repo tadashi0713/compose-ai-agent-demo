@@ -1,5 +1,5 @@
-# FROM node:20.20-slim
-FROM dhi.io/node:20.20-debian13-dev
+# FROM node:24.13.0-slim
+FROM dhi.io/node:24.13.0-dev
 
 RUN corepack enable
 

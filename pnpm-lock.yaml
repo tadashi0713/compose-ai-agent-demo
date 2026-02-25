@@ -32,8 +32,8 @@ importers:
         specifier: ^3.821.0
         version: 3.997.0
       '@daytonaio/sdk':
-        specifier: ^0.145.0
-        version: 0.145.0(ws@8.18.3)
+        specifier: ^0.146.0
+        version: 0.146.0(ws@8.18.3)
       '@neondatabase/serverless':
         specifier: ^1.0.0
         version: 1.0.2
@@ -479,14 +479,14 @@ packages:
     resolution: {integrity: sha512-qQ5m48eI/MFLQ5PxQj4PFaprjyCTLI37ElWMmNs0K8Lk3dVeOdNpB3ks8jc7yM5CDmVC73eMVk/trk3fgmrUpA==}
     engines: {node: '>=6.9.0'}
 
-  '@daytonaio/api-client@0.145.0':
-    resolution: {integrity: sha512-8xLJ1G7C3QJs2KfONcGd4O4ktHtGM4qxWVAcQERHSE1w4hJVrlaUzutMm2qy+HoXtMU1L5h/eFazoxrJ0xWzPw==}
+  '@daytonaio/api-client@0.146.0':
+    resolution: {integrity: sha512-m+5UaamfxPecbfHPpe64pjkr1QVPto2/uWktoJj5UWPCIg88V3GO45WyzUmBF9r4cnw7LdsxjG77daswQZXwAg==}
 
-  '@daytonaio/sdk@0.145.0':
-    resolution: {integrity: sha512-RZhe5oz9EdC9PP3g95g+jXFkCiQbPJTfSALe9wi4W5n97hA9O6rM5zYRuwB2PJbHA8YC0m2t5pyHRJA9+88r5A==}
+  '@daytonaio/sdk@0.146.0':
+    resolution: {integrity: sha512-ybjGDwPCwdRwNfb9ay0zMnUANksWop8aWt+xmggJxkQpgTiim7d9/t2+UMEESG659ErKtfNFAq0ZtvJQuPCf8w==}
 
-  '@daytonaio/toolbox-api-client@0.145.0':
-    resolution: {integrity: sha512-Twh8FIoPAen+pjFeW03Fcom0fYT+k2grw8Q18aHdMAKQtXmMvA3+Ntim5ooE8AsHHLpCL6w+9ycdsovvzZOAEg==}
+  '@daytonaio/toolbox-api-client@0.146.0':
+    resolution: {integrity: sha512-YC8g7xXckgJ3Yo3CVSAnscT4sVKcpOI9+sRKBMe77M4tZtWxohkT3L54OrcVnW9hl5D2vMQDBd1RQLvuNBeKeQ==}
 
   '@dmsnell/diff-match-patch@1.1.0':
     resolution: {integrity: sha512-yejLPmM5pjsGvxS9gXablUSbInW7H976c/FJ4iQxWIm7/38xBySRemTPDe34lhg1gVLbJntX0+sH0jYfU+PN9A==}
@@ -1683,10 +1683,6 @@ packages:
 
   '@smithy/abort-controller@4.2.10':
     resolution: {integrity: sha512-qocxM/X4XGATqQtUkbE9SPUB6wekBi+FyJOMbPj0AhvyvFGYEmOlz6VB22iMePCQsFmMIvFSeViDvA7mZJG47g==}
-    engines: {node: '>=18.0.0'}
-
-  '@smithy/abort-controller@4.2.9':
-    resolution: {integrity: sha512-6YGSygFmck1vMjzSxbjEPKMm1xWUr2+w+F8kWVc8rqKQYd1C5zZftvxGii4ti4Mh5ulIXZtAUoXS88Hhu6fkjQ==}
     engines: {node: '>=18.0.0'}
 
   '@smithy/chunked-blob-reader-native@4.2.2':
@@ -4685,7 +4681,7 @@ snapshots:
   '@aws-sdk/lib-storage@3.937.0(@aws-sdk/client-s3@3.997.0)':
     dependencies:
       '@aws-sdk/client-s3': 3.997.0
-      '@smithy/abort-controller': 4.2.9
+      '@smithy/abort-controller': 4.2.10
       '@smithy/middleware-endpoint': 4.4.20
       '@smithy/smithy-client': 4.12.0
       buffer: 5.6.0
@@ -5005,18 +5001,18 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
-  '@daytonaio/api-client@0.145.0':
+  '@daytonaio/api-client@0.146.0':
     dependencies:
       axios: 1.13.5
     transitivePeerDependencies:
       - debug
 
-  '@daytonaio/sdk@0.145.0(ws@8.18.3)':
+  '@daytonaio/sdk@0.146.0(ws@8.18.3)':
     dependencies:
       '@aws-sdk/client-s3': 3.997.0
       '@aws-sdk/lib-storage': 3.937.0(@aws-sdk/client-s3@3.997.0)
-      '@daytonaio/api-client': 0.145.0
-      '@daytonaio/toolbox-api-client': 0.145.0
+      '@daytonaio/api-client': 0.146.0
+      '@daytonaio/toolbox-api-client': 0.146.0
       '@iarna/toml': 2.2.5
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/exporter-trace-otlp-http': 0.207.0(@opentelemetry/api@1.9.0)
@@ -5042,7 +5038,7 @@ snapshots:
       - supports-color
       - ws
 
-  '@daytonaio/toolbox-api-client@0.145.0':
+  '@daytonaio/toolbox-api-client@0.146.0':
     dependencies:
       axios: 1.13.5
     transitivePeerDependencies:
@@ -6162,11 +6158,6 @@ snapshots:
   '@rtsao/scc@1.1.0': {}
 
   '@smithy/abort-controller@4.2.10':
-    dependencies:
-      '@smithy/types': 4.13.0
-      tslib: 2.8.1
-
-  '@smithy/abort-controller@4.2.9':
     dependencies:
       '@smithy/types': 4.13.0
       tslib: 2.8.1

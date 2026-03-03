@@ -24,7 +24,7 @@ importers:
         version: 3.0.8
       '@ai-sdk/provider-utils':
         specifier: ^4.0.0
-        version: 4.0.16(zod@3.25.76)
+        version: 4.0.17(zod@3.25.76)
       '@ai-sdk/react':
         specifier: ^1.2.12
         version: 1.2.12(react@19.2.4)(zod@3.25.76)
@@ -209,8 +209,8 @@ packages:
     peerDependencies:
       zod: ^3.23.8
 
-  '@ai-sdk/provider-utils@4.0.16':
-    resolution: {integrity: sha512-kBvDqNkt5EwlzF9FujmNhhtl8FYg3e8FO8P5uneKliqfRThWemzBj+wfYr7ZCymAQhTRnwSSz1/SOqhOAwmx9g==}
+  '@ai-sdk/provider-utils@4.0.17':
+    resolution: {integrity: sha512-oyCeFINTYK0B8ZGUBiQc05G5vytPlKSmTTtm19xfJuUgoi8zkvvRcoPQci4mSnyfpPn2XSFFDfsALG8uGcapfg==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -4415,7 +4415,7 @@ snapshots:
       secure-json-parse: 2.7.0
       zod: 3.25.76
 
-  '@ai-sdk/provider-utils@4.0.16(zod@3.25.76)':
+  '@ai-sdk/provider-utils@4.0.17(zod@3.25.76)':
     dependencies:
       '@ai-sdk/provider': 3.0.8
       '@standard-schema/spec': 1.1.0

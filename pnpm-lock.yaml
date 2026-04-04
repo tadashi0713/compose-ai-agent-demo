@@ -32,8 +32,8 @@ importers:
         specifier: ^3.821.0
         version: 3.1024.0
       '@daytonaio/sdk':
-        specifier: ^0.160.0
-        version: 0.160.0(ws@8.18.3)
+        specifier: ^0.161.0
+        version: 0.161.0(ws@8.18.3)
       '@neondatabase/serverless':
         specifier: ^1.0.0
         version: 1.0.2
@@ -479,14 +479,14 @@ packages:
     resolution: {integrity: sha512-qQ5m48eI/MFLQ5PxQj4PFaprjyCTLI37ElWMmNs0K8Lk3dVeOdNpB3ks8jc7yM5CDmVC73eMVk/trk3fgmrUpA==}
     engines: {node: '>=6.9.0'}
 
-  '@daytonaio/api-client@0.160.0':
-    resolution: {integrity: sha512-n9JrVOkhDuBVCznfYdSprPNUPA4Z+yvMRgBqyUbloP18ZqQCoaVr0wd3cgEC3Dzrd/QkuUbnonr2/dSXk7wyQg==}
+  '@daytonaio/api-client@0.161.0':
+    resolution: {integrity: sha512-o7aqU3Reey4cZxnrN8+INNj4w9h2UkEnHnsPLaH4PAyEA9p6XxS2u1yKSyb0/FGFKEQE73Y4CEN+xywd0lZ5Aw==}
 
-  '@daytonaio/sdk@0.160.0':
-    resolution: {integrity: sha512-AnaGGfpwvn8uL+9KimwbFIUg1dHnJ2fZOcvuXm/hIRl2hRQadib73S7gqmUX5Eo8ozTHR+fC1BK40VhnUQbPkg==}
+  '@daytonaio/sdk@0.161.0':
+    resolution: {integrity: sha512-A5gatYz2OBCl38BzwKE5o9mr1WK+RPZlpyL23fKkPDGfBDvj75prLXr3iYlLgSSAXQ/mtu0Prfrs2xEZLimWHg==}
 
-  '@daytonaio/toolbox-api-client@0.160.0':
-    resolution: {integrity: sha512-O1VHGZIMTG+3UCOwUca0f8Tn61OBwRQXW8gKlRG9WASfDks4o65VYPJ1ZEjgHrdbtsOPX2jB+AaVmjHnUvBL2A==}
+  '@daytonaio/toolbox-api-client@0.161.0':
+    resolution: {integrity: sha512-9l97IndmxZUKe/CvMImhPtGcikUMUGl4kKerWIwhw2FjDD85oktnix2W32NioW46mq9GK/vJEyV3yHDZeRB2jA==}
 
   '@dmsnell/diff-match-patch@1.1.0':
     resolution: {integrity: sha512-yejLPmM5pjsGvxS9gXablUSbInW7H976c/FJ4iQxWIm7/38xBySRemTPDe34lhg1gVLbJntX0+sH0jYfU+PN9A==}
@@ -5018,18 +5018,18 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
-  '@daytonaio/api-client@0.160.0':
+  '@daytonaio/api-client@0.161.0':
     dependencies:
       axios: 1.13.6
     transitivePeerDependencies:
       - debug
 
-  '@daytonaio/sdk@0.160.0(ws@8.18.3)':
+  '@daytonaio/sdk@0.161.0(ws@8.18.3)':
     dependencies:
       '@aws-sdk/client-s3': 3.1024.0
       '@aws-sdk/lib-storage': 3.1012.0(@aws-sdk/client-s3@3.1024.0)
-      '@daytonaio/api-client': 0.160.0
-      '@daytonaio/toolbox-api-client': 0.160.0
+      '@daytonaio/api-client': 0.161.0
+      '@daytonaio/toolbox-api-client': 0.161.0
       '@iarna/toml': 2.2.5
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/exporter-trace-otlp-http': 0.207.0(@opentelemetry/api@1.9.0)
@@ -5055,7 +5055,7 @@ snapshots:
       - supports-color
       - ws
 
-  '@daytonaio/toolbox-api-client@0.160.0':
+  '@daytonaio/toolbox-api-client@0.161.0':
     dependencies:
       axios: 1.13.6
     transitivePeerDependencies:

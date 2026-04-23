@@ -1,5 +1,5 @@
 # FROM node:24.13.0-slim
-FROM dhi.io/node:24.14.1-dev
+FROM dhi.io/node:24.15.0-dev
 
 RUN corepack enable
 
